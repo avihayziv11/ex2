@@ -12,18 +12,17 @@ int main()
     
     // Game Choice
     int gameChoice; 
-    
     // Ducky Unity Game variables
     int decimalNum, goldenCorns, tempNum;  
     // The Memory Game variables
     int ducksInline, flag;
-    unsigned long long quakOrSH, tempQuak;
+    unsigned long long quakOrSH;
     // Professor Pat's Power Calculation
     int baseNum, exponentNum, powerNum;
     // The Duck Parade
     int drawnDucks, tempDucks, runDucks;
     // The Mystery of the Repeated Digits
-    int secretCode, countNum, backwardsCode, tempCode, checkNum, numTimes;
+    int secretCode, countNum, tempCode, checkNum, numTimes;
 
     do {
         printf("Welcome to our games, please choose an option:\n");
