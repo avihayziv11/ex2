@@ -20,7 +20,7 @@ int main() {
     int baseNum, exponentNum, powerNum;
 
     // The Duck Parade
-    int drawnDucks, currentBatch;
+    int drawnDucks, currentDucks;
 
     // The Mystery of the Repeated Digits
     int secretCode, tempCode, checkNum, numTimes;
@@ -132,28 +132,28 @@ int main() {
                 while (drawnDucks > 0) {
                     
                     if (drawnDucks > 10) {
-                        currentBatch = 10;
+                        currentDucks = 10;
                     } else {
-                        currentBatch = drawnDucks;
+                        currentDucks = drawnDucks;
                     }
 
                     
-                    for (int i = 0; i < currentBatch; i++) {
+                    for (int i = 0; i < currentDucks; i++) {
                         printf("   _    ");
-                        if (i == currentBatch - 1) printf("\n");
+                        if (i == currentDucks - 1) printf("\n");
                     }
                     
-                    for (int i = 0; i < currentBatch; i++) {
+                    for (int i = 0; i < currentDucks; i++) {
                         printf("__(o)>  ");
-                        if (i == currentBatch - 1) printf("\n");
+                        if (i == currentDucks - 1) printf("\n");
                     }
                     
-                    for (int i = 0; i < currentBatch; i++) {
+                    for (int i = 0; i < currentDucks; i++) {
                         printf("\\___)   ");
-                        if (i == currentBatch - 1) printf("\n");
+                        if (i == currentDucks - 1) printf("\n");
                     }
 
-                    drawnDucks -= currentBatch;
+                    drawnDucks -= currentDucks;
                 }
                 break;
 
