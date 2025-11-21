@@ -110,7 +110,7 @@ int main()
                 }while(exponentNum<=0);
                 for(int i=0; i<exponentNum; i++)
                     powerNum*=baseNum;
-                printf(" %d\n", powerNum);
+                printf("your power is: %d\n", powerNum);
                 break;
             }
             
@@ -132,7 +132,7 @@ int main()
                                 printf("\n");
                         }
                         for(int i=0; i<tempDucks; i++){
-                            printf("__(0)>  ");
+                            printf("__(o)>  ");
                             if(i+1==tempDucks)
                                 printf("\n");
                         }
@@ -151,7 +151,7 @@ int main()
                                 printf("\n");
                         }
                         for(int i=0; i<tempDucks; i++){
-                            printf("__(0)>  ");
+                            printf("__(o)>  ");
                             if(i+1==tempDucks)
                                 printf("\n");
                         }
@@ -167,7 +167,7 @@ int main()
                 break;
             }
             case 5: {
-                printf("please enter number:\n");
+                printf("please enter number\n");
                 do {
                     scanf("%d", &secretCode);
                     if(secretCode<=0)
