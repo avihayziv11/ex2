@@ -124,10 +124,13 @@ int main() {
                 printf("please enter number of ducks:\n");
                 do {
                     scanf("%d", &drawnDucks);
-                    if (drawnDucks <= 0) {
+                    if (drawnDucks < 0) {
                         printf("Invalid number, please try again\n");
                     }
-                } while (drawnDucks <= 0);
+                } while (drawnDucks < 0);
+                if (drawnDucks==0)
+                    break;
+
 
                 while (drawnDucks > 0) {
                     
