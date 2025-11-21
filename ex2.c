@@ -37,11 +37,11 @@ int main()
                 printf("please enter a positive number:\n");
                 do {
                     scanf("%d", &decimalNum);
-                    if(decimalNum > 0) {
-                        goldenCorns = 0;
+                    if(decimalNum>0) {
+                        goldenCorns=0;
                         tempNum = decimalNum;
-                        while(tempNum > 0) {
-                            if(tempNum % 2 != 0) 
+                        while(tempNum>0) {
+                            if(tempNum%2!=0) 
                                 goldenCorns++;
                             tempNum /= 2;
                         }
@@ -50,7 +50,7 @@ int main()
                     else {
                         printf("Invalid number, please try again\n");
                     }
-                } while(decimalNum <= 0); 
+                } while(decimalNum<=0); 
                 break;
             }
             
@@ -122,73 +122,55 @@ int main()
                 }while(drawnDucks<=0);
 
                 runDucks = drawnDucks;
-                for(int j=0; j<((runDucks/10)+1); j++){
-                    if(drawnDucks/10>0){
+                while(drawnDucks>0) {
+                    if(drawnDucks>=10)
                         tempDucks=10;
-                        for(int i=0; i<tempDucks; i++){
-                            printf("   _    ");
-                            if(i+1==tempDucks) printf("\n");
-                        }
-                        for(int i=0; i<tempDucks; i++){
-                            printf("__(o)>  "); 
-                            if(i+1==tempDucks) printf("\n");
-                        }
-                        for(int i=0; i<tempDucks; i++){
-                            printf("\\___)   ");
-                            if(i+1==tempDucks) printf("\n");
-                        }
-                        drawnDucks-=10;
+                    else
+                        tempDucks = drawnDucks;
+
+                    for(int i=0; i<tempDucks; i++){
+                        printf("   _    ");
                     }
-                    else{
-                        tempDucks=drawnDucks;
-                        if(tempDucks > 0) {
-                            for(int i=0; i<tempDucks; i++){
-                                printf("   _    ");
-                                if(i+1==tempDucks) printf("\n");
-                            }
-                            for(int i=0; i<tempDucks; i++){
-                                printf("__(o)>  "); 
-                                if(i+1==tempDucks) printf("\n");
-                            }
-                            for(int i=0; i<tempDucks; i++){
-                                printf("\\___)   ");
-                                if(i+1==tempDucks) printf("\n");
-                            }
-                        }
+                    printf("\n");
+                    for(int i=0; i<tempDucks; i++){
+                        printf("__(o)>  ");
                     }
+                    printf("\n");
+                    for(int i=0; i<tempDucks; i++){
+                        printf("\\___)   ");
+                    }
+                    printf("\n");
+
+                    drawnDucks-=tempDucks;
                 }
                 break;
             }
+
             case 5: {
                 printf("please enter number\n");
                 do {
                     scanf("%d", &secretCode);
-                    if(secretCode <= 0)
+                    if(secretCode<=0)
                         printf("Invalid number, please try again\n");
                 } while(secretCode <= 0);
 
-                tempCode = secretCode;
+                tempCode=secretCode;
                 
-                while(secretCode > 0) {
-                    checkNum = secretCode % 10;
-                    secretCode = secretCode / 10;
+                while(tempCode > 0) {
+                    checkNum = tempCode % 10;
+                    tempCode = tempCode / 10;
                     
-                    tempCode = secretCode;
-                    numTimes = 0; 
+                    numTimes = 0;
+                    int scanNum=secretCode;
 
-                    while(tempCode > 0) {
-                        if(tempCode % 10 == checkNum) {
+                    while(scanNum > 0) {
+                        if(scanNum%10==checkNum) 
                             numTimes++;
-                        }
-                        else {
-                            numTimes = numTimes;
-                        }
-                        tempCode = tempCode / 10;
+                        scanNum = scanNum/10;
                     }
 
-                    if(numTimes > 0) {
+                    if(numTimes>1)
                         printf("%d appears more than once!\n", checkNum);
-                    }
                 }
                 break;
             }
