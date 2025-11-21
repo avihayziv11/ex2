@@ -8,17 +8,25 @@ Assignment: ex2
 
 int main()
 {
+    // MAIN MENU LOOP
+    
+    // Game Choice
     int gameChoice; 
     
+    // Ducky Unity Game variables
     int decimalNum, goldenCorns, tempNum;  
     
+    // The Memory Game variables
     int ducksInline, flag;
     unsigned long long quakOrSH; 
     
+    // Professor Pat's Power Calculation
     int baseNum, exponentNum, powerNum;
     
+    // The Duck Parade
     int drawnDucks, tempDucks, runDucks;
     
+    // The Mystery of the Repeated Digits
     int secretCode, tempCode, checkNum, numTimes;
 
     do {
@@ -67,7 +75,7 @@ int main()
                             do{
                                 scanf("%d", &flag);
                                 if(flag!=0 && flag!=1)
-                                    printf("invalid number please try again\n");
+                                    printf("Invalid number, please try again\n");
                             }while(flag!=0 && flag!=1);
                             
                             if(flag == 1)
@@ -95,14 +103,14 @@ int main()
                 do{
                     scanf("%d", &baseNum);
                     if (baseNum<0) 
-                        printf("invalid number, please try again\n");
+                        printf("Invalid number, please try again\n");
                 }while(baseNum<0); 
                 
                 printf("please enter the exponent\n");
                 do{
                     scanf("%d", &exponentNum);
                     if (exponentNum<0) 
-                        printf("invalid number, please try again\n");
+                        printf("Invalid number, please try again\n");
                 }while(exponentNum<0);
 
                 for(int i=0; i<exponentNum; i++)
@@ -117,7 +125,7 @@ int main()
                 do{
                     scanf("%d", &drawnDucks);
                     if(drawnDucks<=0)
-                        printf("invalid number, please try again\n");
+                        printf("Invalid number, please try again\n");
                     
                 }while(drawnDucks<=0);
                 runDucks = drawnDucks;
