@@ -30,7 +30,7 @@ int main()
         printf("5. The Mystery of the Repeated Digits\n");
         printf("6. Good Night Ducks\n");
 
-        scanf(" %d", &gameChoice); // Added space for safety
+        scanf(" %d", &gameChoice);
 
         switch(gameChoice) {
             case 1: {
