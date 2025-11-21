@@ -8,25 +8,17 @@ Assignment: ex2
 
 int main()
 {
-    // MAIN MENU LOOP
-    
-    // Game Choice
     int gameChoice; 
     
-    // Ducky Unity Game variables
     int decimalNum, goldenCorns, tempNum;  
     
-    // The Memory Game variables
     int ducksInline, flag;
     unsigned long long quakOrSH; 
     
-    // Professor Pat's Power Calculation
     int baseNum, exponentNum, powerNum;
     
-    // The Duck Parade
-    int drawnDucks, tempDucks, runDucks;
+    int drawnDucks, tempDucks;
     
-    // The Mystery of the Repeated Digits
     int secretCode, tempCode, checkNum, numTimes;
 
     do {
@@ -128,47 +120,29 @@ int main()
                         printf("Invalid number, please try again\n");
                     
                 }while(drawnDucks<=0);
-                runDucks = drawnDucks;
-                for(int j=0; j<((runDucks/10)+1); j++){
-                    if(drawnDucks/10>0){
-                        tempDucks=10;
-                        for(int i=0; i<tempDucks; i++){
-                            printf("   _    ");
-                            if(i+1==tempDucks)
-                                printf("\n");
-                        }
-                        for(int i=0; i<tempDucks; i++){
-                            printf("__(o)>  ");
-                            if(i+1==tempDucks)
-                                printf("\n");
-                        }
-                        for(int i=0; i<tempDucks; i++){
-                            printf("\\___)   ");
-                            if(i+1==tempDucks)
-                                printf("\n");
-                        }
-                        drawnDucks-=10;
+
+
+                while (drawnDucks>0) {
+                    if (drawnDucks>10) {
+                        tempDucks = 10;
+                    } else {
+                        tempDucks = drawnDucks;
                     }
-                    else{
-                        tempDucks=drawnDucks;
-                        if (tempDucks > 0) { 
-                            for(int i=0; i<tempDucks; i++){
-                                printf("   _    ");
-                                if(i+1==tempDucks)
-                                    printf("\n");
-                            }
-                            for(int i=0; i<tempDucks; i++){
-                                printf("__(o)>  ");
-                                if(i+1==tempDucks)
-                                    printf("\n");
-                            }
-                            for(int i=0; i<tempDucks; i++){
-                                printf("\\___)   ");
-                                if(i+1==tempDucks)
-                                    printf("\n");
-                            }
-                        }
+
+                    for(int i=0; i<tempDucks; i++){
+                        printf("   _    ");
+                        if(i+1==tempDucks) printf("\n");
                     }
+                    for(int i=0; i<tempDucks; i++){
+                        printf("__(o)>  ");
+                        if(i+1==tempDucks) printf("\n");
+                    }
+                    for(int i=0; i<tempDucks; i++){
+                        printf("\\___)   ");
+                        if(i+1==tempDucks) printf("\n");
+                    }
+                    
+                    drawnDucks -= tempDucks;
                 }
                 break;
             }
