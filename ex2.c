@@ -170,32 +170,32 @@ int main()
                 printf("please enter number:\n");
                 do {
                     scanf("%d", &secretCode);
-                    if(secretCode <= 0)
+                    if(secretCode<=0)
                         printf("Invalid number, please try again\n");
-                } while(secretCode <= 0);
+                } while(secretCode<=0);
 
                 tempCode = secretCode;
-                int countNum = 0;
-                while(tempCode > 0) {
+                countNum = 0;
+                while(tempCode>0){
                     countNum++;
-                    tempCode = tempCode / 10;
+                    tempCode = tempCode/10;
                 }
 
-                while(secretCode > 0) {
+                while(secretCode>0) {
                     checkNum = secretCode % 10;
                     secretCode = secretCode / 10;
                     
                     tempCode = secretCode;
                     numTimes = 0; 
 
-                    while(tempCode > 0) {
-                        if(tempCode % 10 == checkNum) {
+                    while(tempCode>0) {
+                        if(tempCode%10==checkNum) {
                             numTimes++;
                         }
                         else {
                             numTimes = numTimes;
                         }
-                        tempCode = tempCode / 10;
+                        tempCode = tempCode/10;
                     }
 
                     if(numTimes > 0) {
