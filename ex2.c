@@ -8,21 +8,18 @@ Assignment: ex2
 
 int main()
 {
-    // MAIN MENU LOOP
-    
-    // Game Choice
     int gameChoice; 
-    // Ducky Unity Game variables
+    
     int decimalNum, goldenCorns, tempNum;  
-    // The Memory Game variables
+    
     int ducksInline, flag;
-    unsigned long long quakOrSH;
-    // Professor Pat's Power Calculation
+    unsigned long long quakOrSH; 
+    
     int baseNum, exponentNum, powerNum;
-    // The Duck Parade
+    
     int drawnDucks, tempDucks, runDucks;
-    // The Mystery of the Repeated Digits
-    int secretCode, countNum, tempCode, checkNum, numTimes;
+    
+    int secretCode, tempCode, checkNum, numTimes;
 
     do {
         printf("Welcome to our games, please choose an option:\n");
@@ -69,10 +66,9 @@ int main()
                             printf("duck %d do QUAK? 1 for yes, 0 for no\n", i+1);
                             do{
                                 scanf("%d", &flag);
-                                if(flag!=0&&flag!=1)
+                                if(flag!=0 && flag!=1)
                                     printf("invalid number please try again\n");
-                            }while(flag!=0&&flag!=1);
-                            
+                            }while(flag!=0 && flag!=1);
                             
                             if(flag == 1)
                                 quakOrSH = quakOrSH | (1ULL << i);       
@@ -84,7 +80,6 @@ int main()
                             else
                                 printf("duck number %d do Sh...\n", i+1);
                         }
-                        
                     } 
                     else {
                         printf("Invalid number, please try again\n");
@@ -98,18 +93,21 @@ int main()
                 powerNum=1;
                 printf("please enter the number\n");
                 do{
-                    scanf(" %d", &baseNum);
-                    if (baseNum<=0)
+                    scanf("%d", &baseNum);
+                    if (baseNum<0) 
                         printf("invalid number, please try again\n");
-                }while(baseNum<=0);
+                }while(baseNum<0); 
+                
                 printf("please enter the exponent\n");
                 do{
-                    scanf(" %d", &exponentNum);
-                    if (exponentNum<=0)
+                    scanf("%d", &exponentNum);
+                    if (exponentNum<0) 
                         printf("invalid number, please try again\n");
-                }while(exponentNum<=0);
+                }while(exponentNum<0);
+
                 for(int i=0; i<exponentNum; i++)
                     powerNum*=baseNum;
+                
                 printf("your power is: %d\n", powerNum);
                 break;
             }
@@ -117,7 +115,7 @@ int main()
             case 4: {
                 printf("please enter number of ducks:\n");
                 do{
-                    scanf(" %d", &drawnDucks);
+                    scanf("%d", &drawnDucks);
                     if(drawnDucks<=0)
                         printf("invalid number, please try again\n");
                     
@@ -145,24 +143,24 @@ int main()
                     }
                     else{
                         tempDucks=drawnDucks;
-                        for(int i=0; i<tempDucks; i++){
-                            printf("   _    ");
-                            if(i+1==tempDucks)
-                                printf("\n");
+                        if (tempDucks > 0) { 
+                            for(int i=0; i<tempDucks; i++){
+                                printf("   _    ");
+                                if(i+1==tempDucks)
+                                    printf("\n");
+                            }
+                            for(int i=0; i<tempDucks; i++){
+                                printf("__(o)>  ");
+                                if(i+1==tempDucks)
+                                    printf("\n");
+                            }
+                            for(int i=0; i<tempDucks; i++){
+                                printf("\\___)   ");
+                                if(i+1==tempDucks)
+                                    printf("\n");
+                            }
                         }
-                        for(int i=0; i<tempDucks; i++){
-                            printf("__(o)>  ");
-                            if(i+1==tempDucks)
-                                printf("\n");
-                        }
-                        for(int i=0; i<tempDucks; i++){
-                            printf("\\___)   ");
-                            if(i+1==tempDucks)
-                                printf("\n");
-                        }
-
                     }
-
                 }
                 break;
             }
@@ -170,32 +168,27 @@ int main()
                 printf("please enter number\n");
                 do {
                     scanf("%d", &secretCode);
-                    if(secretCode<=0)
+                    if(secretCode <= 0)
                         printf("Invalid number, please try again\n");
-                } while(secretCode<=0);
+                } while(secretCode <= 0);
 
                 tempCode = secretCode;
-                countNum = 0;
-                while(tempCode>0){
-                    countNum++;
-                    tempCode = tempCode/10;
-                }
-
-                while(secretCode>0) {
+                
+                while(secretCode > 0) {
                     checkNum = secretCode % 10;
                     secretCode = secretCode / 10;
                     
                     tempCode = secretCode;
                     numTimes = 0; 
 
-                    while(tempCode>0) {
-                        if(tempCode%10==checkNum) {
+                    while(tempCode > 0) {
+                        if(tempCode % 10 == checkNum) {
                             numTimes++;
                         }
                         else {
                             numTimes = numTimes;
                         }
-                        tempCode = tempCode/10;
+                        tempCode = tempCode / 10;
                     }
 
                     if(numTimes > 0) {
