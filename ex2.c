@@ -20,7 +20,8 @@ int main() {
     int baseNum, exponentNum, powerNum;
 
     // The Duck Parade
-    int drawnDucks, currentDucks, maxDucksInRow = 10;
+    int drawnDucks, currentDucks;
+    const int MAX_DUCKS_IN_ROW = 10;
 
     // The Mystery of the Repeated Digits
     int secretCode, tempCode, checkNum, numTimes;
@@ -134,8 +135,8 @@ int main() {
 
                 while (drawnDucks > 0) {
                     
-                    if (drawnDucks > maxDucksInRow) {
-                        currentDucks = maxDucksInRow;
+                    if (drawnDucks > MAX_DUCKS_IN_ROW) {
+                        currentDucks = MAX_DUCKS_IN_ROW;
                     } else {
                         currentDucks = drawnDucks;
                     }
