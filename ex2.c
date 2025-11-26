@@ -13,14 +13,14 @@ int main() {
     int decimalNum, goldenCorns, tempNum;
 
     // The Memory Game
-    int ducksInline, flag;
+    int ducksInline, isQuak;
     unsigned long long quakOrSH;
 
     // Professor Pat's Power Calculation
     int baseNum, exponentNum, powerNum;
 
     // The Duck Parade
-    int drawnDucks, currentDucks;
+    int drawnDucks, currentDucks, maxDucksInRow = 10;
 
     // The Mystery of the Repeated Digits
     int secretCode, tempCode, checkNum, numTimes;
@@ -39,7 +39,7 @@ int main() {
         scanf("%d", &gameChoice);
 
         switch (gameChoice) {
-            case 1: 
+            case 1: // 1 for Ducky's Unity Game
                 printf("please enter a positive number:\n");
                 do {
                     scanf("%d", &decimalNum);
@@ -59,7 +59,7 @@ int main() {
                 printf("Ducky earns %d corns\n", goldenCorns);
                 break;
 
-            case 2: 
+            case 2: // 2 for The Memory Game
                 quakOrSH = 0; 
                 printf("please enter the number of ducks:\n");
                 do {
@@ -75,13 +75,13 @@ int main() {
                 for (int i = 0; i < ducksInline; i++) {
                     printf("duck %d do QUAK? 1 for yes, 0 for no\n", i + 1);
                     do {
-                        scanf("%d", &flag);
-                        if (flag != 0 && flag != 1) {
+                        scanf("%d", &isQuak);
+                        if (isQuak != 0 && isQuak != 1) {
                             printf("Invalid number, please try again\n");
                         }
-                    } while (flag != 0 && flag != 1);
+                    } while (isQuak != 0 && isQuak != 1);
 
-                    if (flag == 1) {
+                    if (isQuak == 1) {
                         quakOrSH = quakOrSH | (1ULL << i);
                     }
                 }
@@ -96,7 +96,7 @@ int main() {
                 }
                 break;
 
-            case 3: 
+            case 3: // 3 for Professor Pat's Power Calculation
                 printf("please enter the number\n");
                 do {
                     scanf("%d", &baseNum);
@@ -120,7 +120,7 @@ int main() {
                 printf("your power is: %d\n", powerNum);
                 break;
 
-            case 4: 
+            case 4: // 4 for The Duck Parade
                 printf("please enter number of ducks:\n");
                 do {
                     scanf("%d", &drawnDucks);
@@ -134,8 +134,8 @@ int main() {
 
                 while (drawnDucks > 0) {
                     
-                    if (drawnDucks > 10) {
-                        currentDucks = 10;
+                    if (drawnDucks > maxDucksInRow) {
+                        currentDucks = maxDucksInRow;
                     } else {
                         currentDucks = drawnDucks;
                     }
@@ -160,7 +160,7 @@ int main() {
                 }
                 break;
 
-            case 5: 
+            case 5: // 5 for The Mystery of the Repeated Digits
                 printf("please enter number\n"); 
                 do {
                     scanf("%d", &secretCode);
@@ -191,7 +191,7 @@ int main() {
                 }
                 break;
 
-            case 6: 
+            case 6: // 6 for shut the program
                 printf("Good night! See you at the pond tomorrow.\n");
                 break;
 
